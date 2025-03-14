@@ -3,6 +3,11 @@
   color: white;
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
 body {
   margin: 0;
   min-width: 320px;
