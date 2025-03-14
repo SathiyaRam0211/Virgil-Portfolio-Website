@@ -1,0 +1,10 @@
+:root {
+  font-family: "IBM Plex Mono", monospace;
+  color: white;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
