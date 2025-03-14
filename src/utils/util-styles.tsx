@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import { colors } from "../constants/variables";
-import backgroundImage from "../assets/Background.jpg";
 
-export const AppWrapper = styled.section`
+export const AppWrapper = styled.section<{ $bgImage: string }>`
   height: 100%;
   min-height: 100vh;
   position: relative;
-  background: url(${backgroundImage}) center/cover no-repeat;
+  background: url(${(props) => props.$bgImage}) center/cover no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
 `;
 
 export const NavbarWrapper = styled.nav`
@@ -26,7 +26,7 @@ export const NavbarWrapper = styled.nav`
   padding: 32px 0px;
   width: calc(100vw - 600px);
   max-width: 100%;
-  border-bottom: 0.5px solid ${colors.light}10;
+  border-bottom: 1px solid ${colors.light}30;
   background: ${colors.dark};
   transition: background 0.3s ease-in-out;
   box-sizing: content-box;
@@ -44,7 +44,7 @@ export const NavItem = styled.div<NavItemProps>`
   font-weight: 400;
   color: ${colors.light};
   border: ${({ $active }) =>
-    $active ? `0.5px solid ${colors.light}` : "0.5px solid transparent;"};
+    $active ? `1px solid ${colors.light}50` : "1px solid transparent;"};
   width: fit-content;
   max-width: 360px;
   text-align: center;
@@ -68,6 +68,7 @@ export const SectionWrapper = styled.section`
   min-height: 100vh;
   box-sizing: border-box;
   background: transparent;
+  border-bottom: 1px solid ${colors.light}30;
 `;
 
 export const HeaderText = styled.h1`
@@ -75,6 +76,7 @@ export const HeaderText = styled.h1`
   font-weight: 400;
   color: ${colors.light};
   line-height: 72px;
+  margin-top: 0px;
 `;
 
 export const BodyText = styled.h3`

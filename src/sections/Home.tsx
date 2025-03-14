@@ -5,6 +5,7 @@ import {
   HeaderText,
   BodyText,
   HighlightText,
+  Cursor,
 } from "../utils/util-styles";
 import { greetings } from "../constants/variables";
 import ProfilePicture from "../assets/ProfilePicture.jpeg";
@@ -16,6 +17,7 @@ const HeaderContainer = styled.div`
   gap: 32px;
   width: 100%;
   box-sizing: border-box;
+  padding-top: 24px;
 `;
 
 const TextContainer = styled.div``;
@@ -52,12 +54,13 @@ const Home = () => {
         <TextContainer>
           <HeaderText>
             {greetings[greetingIndex]}, <br />
-            I'm<HighlightText> Virgil Garrett. </HighlightText>
+            i'm<HighlightText> Virgil Garrett. </HighlightText>
           </HeaderText>
           <BodyText>
             Strategic Communicator <br /> Social Media & Branding Strategist
             <br />
             Media Relations & Crisis Communication Advocate
+            <Cursor>|</Cursor>
           </BodyText>
         </TextContainer>
       </HeaderContainer>

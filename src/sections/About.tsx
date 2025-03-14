@@ -3,7 +3,6 @@ import {
   HeaderText,
   BodyText,
   HighlightText,
-  Cursor,
   Link,
 } from "../utils/util-styles";
 
@@ -37,7 +36,6 @@ const About = () => {
             {" "}
             resume
           </Link>
-          <Cursor>|</Cursor>
         </p>
       </BodyText>
     </SectionWrapper>
