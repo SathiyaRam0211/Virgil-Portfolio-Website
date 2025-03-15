@@ -11,6 +11,10 @@ export const AppWrapper = styled.section<{ $bgImage: string }>`
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 0.5s ease-in-out;
+
+  @media (max-width: 1024px) {
+    background: ${colors.dark};
+  }
 `;
 
 export const NavbarWrapper = styled.nav`
@@ -22,14 +26,19 @@ export const NavbarWrapper = styled.nav`
   top: 0px;
   left: 0px;
   z-index: 10;
-  margin: 0px 300px;
   padding: 32px 0px;
   width: calc(100vw - 600px);
-  max-width: 100%;
   border-bottom: 1px solid ${colors.light}30;
   background: ${colors.dark};
   transition: background 0.3s ease-in-out;
-  box-sizing: content-box;
+  margin: 0px 300px;
+
+  @media (max-width: 1024px) {
+    margin: 0px 12px;
+    width: calc(100vw - 48px);
+    gap: 0px;
+    padding: 24px 0px;
+  }
 `;
 
 interface NavItemProps {
@@ -53,6 +62,11 @@ export const NavItem = styled.div<NavItemProps>`
   &:hover {
     border: 0.5px solid ${colors.light};
   }
+
+  @media (max-width: 1024px) {
+    font-size: 8px;
+    padding: 8px;
+  }
 `;
 
 export const PageWrapper = styled.div`
@@ -69,6 +83,10 @@ export const SectionWrapper = styled.section`
   box-sizing: border-box;
   background: transparent;
   border-bottom: 1px solid ${colors.light}30;
+
+  @media (max-width: 1024px) {
+    padding: 90px 0px 0px;
+  }
 `;
 
 export const HeaderText = styled.h1`
@@ -77,6 +95,11 @@ export const HeaderText = styled.h1`
   color: ${colors.light};
   line-height: 72px;
   margin-top: 0px;
+
+  @media (max-width: 1024px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
 `;
 
 export const BodyText = styled.h3`
@@ -84,6 +107,11 @@ export const BodyText = styled.h3`
   font-weight: 400;
   color: ${colors.light};
   line-height: 32px;
+
+  @media (max-width: 1024px) {
+    font-size: 12px;
+    line-height: 18px;
+  }
 `;
 
 export const HighlightText = styled.span`

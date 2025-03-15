@@ -4,27 +4,30 @@ import { AppWrapper } from "./utils/util-styles";
 import Page from "./pages/Page";
 import { Suspense, useEffect, useState } from "react";
 import backgroundImage from "./assets/Background.jpg";
-import backgroundLowRes from "./assets/BackgroundLowRes.jpg";
 
 const App = () => {
-  const [bgImage, setBgImage] = useState(backgroundLowRes);
+  const [isBgLoaded, setIsBgLoaded] = useState(false);
 
   useEffect(() => {
     const img = new Image();
     img.src = backgroundImage;
-    img.onload = () => setBgImage(backgroundImage);
+    img.onload = () => setIsBgLoaded(true);
   }, []);
 
   return (
     <BrowserRouter>
-      <AppWrapper $bgImage={bgImage}>
-        <Navbar />
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route element={<Page />} path="/" />
-          </Routes>
-        </Suspense>
-      </AppWrapper>
+      {isBgLoaded ? (
+        <AppWrapper $bgImage={backgroundImage}>
+          <Navbar />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route element={<Page />} path="/" />
+            </Routes>
+          </Suspense>
+        </AppWrapper>
+      ) : (
+        <div>Loading...</div>
+      )}
     </BrowserRouter>
   );
 };

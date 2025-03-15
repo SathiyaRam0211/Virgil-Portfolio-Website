@@ -1,8 +1,9 @@
 export const colors = {
   dark: "#000000",
   primary: "#008fff",
-  secondary: "#253745",
-  tertiary: "#4A5C6A",
+  secondary: "#D2C7FF",
+  mail: "#F6BC00",
+  linkedin: "#0077B5",
   light: "#ffffff",
   border: "#9BA8AB",
 };

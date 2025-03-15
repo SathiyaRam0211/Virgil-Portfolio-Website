@@ -15,12 +15,22 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 32px;
-  width: 100%;
   box-sizing: border-box;
   padding-top: 24px;
+
+  @media (max-width: 1024px) {
+    padding: 0px 24px;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+  }
 `;
 
-const TextContainer = styled.div``;
+const TextContainer = styled.div`
+  @media (max-width: 1024px) {
+    width: calc(100vw - 48px);
+  }
+`;
 
 const ImageContainer = styled.div`
   width: 320px;
@@ -32,6 +42,11 @@ const ImageContainer = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (max-width: 1024px) {
+    width: 320px;
+    height: 320px;
   }
 `;
 
